@@ -1,0 +1,57 @@
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T14:25:18.535Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T14:25:30.539Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T14:41:07.139Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=38.5&lon=-122.8 \u001b[32m200\u001b[0m 1253.674 ms - 111\u001b[0m","service":"weather-service","timestamp":"2026-02-28T14:41:28.323Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=38.5&lon=-122.8 \u001b[36m304\u001b[0m 747.685 ms - -\u001b[0m","service":"weather-service","timestamp":"2026-02-28T14:41:58.682Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T14:47:43.642Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T14:47:45.405Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T14:47:49.957Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T14:47:56.336Z"}
+{"level":"error","message":"[API ERROR] 401 - Unauthorized: No token provided","service":"weather-service","timestamp":"2026-02-28T14:47:58.035Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather \u001b[33m401\u001b[0m 4.985 ms - 1315\u001b[0m","service":"weather-service","timestamp":"2026-02-28T14:47:58.041Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T14:48:05.276Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=38.5&lon=-122.8 \u001b[32m200\u001b[0m 1336.027 ms - 111\u001b[0m","service":"weather-service","timestamp":"2026-02-28T14:48:06.390Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T14:48:11.969Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T14:51:27.789Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T14:53:05.485Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T14:53:12.584Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather \u001b[32m200\u001b[0m 4278.506 ms - 111\u001b[0m","service":"weather-service","timestamp":"2026-02-28T14:53:19.835Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=37.77&lon=-122.41 \u001b[32m200\u001b[0m 271.045 ms - 110\u001b[0m","service":"weather-service","timestamp":"2026-02-28T14:53:20.115Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=38.5&lon=-122.8 \u001b[36m304\u001b[0m 720.219 ms - -\u001b[0m","service":"weather-service","timestamp":"2026-02-28T14:53:51.633Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=38.5&lon=-122.8 \u001b[36m304\u001b[0m 190.616 ms - -\u001b[0m","service":"weather-service","timestamp":"2026-02-28T14:53:55.982Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=38.5&lon=-122.8 \u001b[36m304\u001b[0m 833.936 ms - -\u001b[0m","service":"weather-service","timestamp":"2026-02-28T14:54:35.022Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T14:55:14.779Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=38.5&lon=-122.8 \u001b[32m200\u001b[0m 1257.588 ms - 146\u001b[0m","service":"weather-service","timestamp":"2026-02-28T14:55:19.290Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=38.5&lon=-122.8 \u001b[36m304\u001b[0m 294.820 ms - -\u001b[0m","service":"weather-service","timestamp":"2026-02-28T14:55:19.586Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T14:55:49.848Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T14:55:53.530Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather \u001b[32m200\u001b[0m 775.382 ms - 145\u001b[0m","service":"weather-service","timestamp":"2026-02-28T14:55:57.360Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=37.77&lon=-122.41 \u001b[32m200\u001b[0m 196.199 ms - 145\u001b[0m","service":"weather-service","timestamp":"2026-02-28T14:55:57.562Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.939397597755804&lon=77.72428299031822 \u001b[32m200\u001b[0m 1144.118 ms - 146\u001b[0m","service":"weather-service","timestamp":"2026-02-28T14:56:21.308Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.939481784350376&lon=77.72429509770933 \u001b[32m200\u001b[0m 684.755 ms - 146\u001b[0m","service":"weather-service","timestamp":"2026-02-28T14:56:35.845Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T14:58:39.765Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.939481784350376&lon=77.72429509770933 \u001b[36m304\u001b[0m 1297.645 ms - -\u001b[0m","service":"weather-service","timestamp":"2026-02-28T14:58:42.972Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T14:58:44.510Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather \u001b[32m200\u001b[0m 292.750 ms - 145\u001b[0m","service":"weather-service","timestamp":"2026-02-28T14:58:47.767Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=37.77&lon=-122.41 \u001b[32m200\u001b[0m 355.709 ms - 145\u001b[0m","service":"weather-service","timestamp":"2026-02-28T14:58:48.144Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.939455591760014&lon=77.72422794129967 \u001b[32m200\u001b[0m 5963.578 ms - 146\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:00:55.149Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T15:03:57.268Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T15:04:18.379Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T15:04:21.031Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather \u001b[32m200\u001b[0m 759.979 ms - 684\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:04:24.745Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=37.77&lon=-122.41 \u001b[32m200\u001b[0m 182.452 ms - 690\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:04:24.937Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.939591222524772&lon=77.72434259691914 \u001b[32m200\u001b[0m 1274.452 ms - 685\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:06:52.713Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.939591222524772&lon=77.72434259691914 \u001b[36m304\u001b[0m 885.358 ms - -\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:08:12.239Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.939481756999218&lon=77.72428649587278 \u001b[32m200\u001b[0m 1187.640 ms - 685\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:08:25.478Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.939481756999218&lon=77.72428649587278 \u001b[36m304\u001b[0m 268.730 ms - -\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:08:26.985Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.939481756999218&lon=77.72428649587278 \u001b[36m304\u001b[0m 1297.111 ms - -\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:08:35.306Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T15:08:40.999Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T15:08:47.303Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T15:09:00.140Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.939481756999218&lon=77.72428649587278 \u001b[36m304\u001b[0m 1227.798 ms - -\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:09:09.989Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T15:09:19.802Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T15:09:26.879Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.9395068747949&lon=77.72430878317684 \u001b[32m200\u001b[0m 1145.667 ms - 685\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:09:29.177Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather \u001b[32m200\u001b[0m 338.715 ms - 684\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:09:29.921Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=37.77&lon=-122.41 \u001b[32m200\u001b[0m 291.065 ms - 690\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:09:30.221Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=37.77&lon=-122.41&locationName=Mysuru%2C%20India \u001b[32m200\u001b[0m 304.119 ms - 686\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:09:30.528Z"}
