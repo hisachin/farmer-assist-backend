@@ -44,6 +44,10 @@ async function runTests() {
         const resSpecific = await axios.get(`${baseUrl}?lat=${lat}&lon=${lon}`, config);
         if (resSpecific.status === 200 && resSpecific.data.success) {
             console.log('✅ Success: Specific location returned weather data.');
+            console.log(`   Location: ${resSpecific.data.data.locationName}`);
+            if (resSpecific.data.data.locationName.includes('Location (')) {
+                console.log('   ✅ Sub-test: Correct coordinate-based fallback returned.');
+            }
             console.log(`   Temperature: ${resSpecific.data.data.temperature}`);
         } else {
             throw new Error(`Unexpected response: ${resSpecific.status}`);

@@ -1,1 +1,2 @@
 {"level":"error","message":"[API ERROR] 401 - Unauthorized: No token provided","service":"weather-service","timestamp":"2026-02-28T14:47:58.035Z"}
+{"level":"error","message":"[API ERROR] 401 - Unauthorized: Invalid token","service":"weather-service","timestamp":"2026-02-28T15:26:42.546Z"}

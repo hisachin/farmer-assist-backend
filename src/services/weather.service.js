@@ -39,7 +39,7 @@ class WeatherService {
 
             let finalLocationName = locationName;
             if (!finalLocationName) {
-                finalLocationName = isDefault ? 'Bengaluru, India' : 'Detected Location';
+                finalLocationName = isDefault ? 'Bengaluru, India' : `Location (${latitude.toFixed(2)}, ${longitude.toFixed(2)})`;
             }
 
             return {

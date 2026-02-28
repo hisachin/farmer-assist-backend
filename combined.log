@@ -55,3 +55,34 @@
 {"level":"info","message":"\u001b[0mGET /api/v1/weather \u001b[32m200\u001b[0m 338.715 ms - 684\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:09:29.921Z"}
 {"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=37.77&lon=-122.41 \u001b[32m200\u001b[0m 291.065 ms - 690\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:09:30.221Z"}
 {"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=37.77&lon=-122.41&locationName=Mysuru%2C%20India \u001b[32m200\u001b[0m 304.119 ms - 686\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:09:30.528Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T15:21:07.249Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather \u001b[32m200\u001b[0m 1284.766 ms - 682\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:21:10.924Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=37.77&lon=-122.41 \u001b[32m200\u001b[0m 270.340 ms - 690\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:21:11.201Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=37.77&lon=-122.41&locationName=Mysuru%2C%20India \u001b[32m200\u001b[0m 315.602 ms - 686\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:21:11.521Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T15:22:44.280Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.939394276303013&lon=77.72422997187137 \u001b[32m200\u001b[0m 1404.476 ms - 685\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:24:07.402Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.939499290439148&lon=77.72423819606216 \u001b[32m200\u001b[0m 1161.861 ms - 685\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:25:04.964Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.939499290439148&lon=77.72423819606216 \u001b[36m304\u001b[0m 304.308 ms - -\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:25:05.273Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.939499290439148&lon=77.72423819606216 \u001b[36m304\u001b[0m 331.465 ms - -\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:25:05.607Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.939499290439148&lon=77.72423819606216 \u001b[36m304\u001b[0m 347.649 ms - -\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:25:05.956Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.939499290439148&lon=77.72423819606216 \u001b[36m304\u001b[0m 301.605 ms - -\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:25:06.261Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.939499290439148&lon=77.72423819606216 \u001b[36m304\u001b[0m 309.086 ms - -\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:25:06.574Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.939499290439148&lon=77.72423819606216 \u001b[36m304\u001b[0m 274.009 ms - -\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:25:06.849Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.939499290439148&lon=77.72423819606216 \u001b[36m304\u001b[0m 272.593 ms - -\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:25:07.124Z"}
+{"level":"info","message":"\u001b[0mGET /dashboard?_rsc=1axlz \u001b[33m404\u001b[0m 2.079 ms - 32\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:25:39.084Z"}
+{"level":"info","message":"\u001b[0mGET /dashboard \u001b[33m404\u001b[0m 0.269 ms - 32\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:25:39.134Z"}
+{"level":"info","message":"\u001b[0mGET /favicon.ico \u001b[33m404\u001b[0m 0.410 ms - 32\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:25:39.218Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T15:26:12.852Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T15:26:14.445Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T15:26:17.498Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather \u001b[32m200\u001b[0m 1223.956 ms - 682\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:26:21.710Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=37.77&lon=-122.41 \u001b[32m200\u001b[0m 275.731 ms - 698\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:26:21.992Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=37.77&lon=-122.41&locationName=Mysuru%2C%20India \u001b[32m200\u001b[0m 347.363 ms - 686\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:26:22.342Z"}
+{"level":"error","message":"[API ERROR] 401 - Unauthorized: Invalid token","service":"weather-service","timestamp":"2026-02-28T15:26:42.546Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.9394471663054&lon=77.72427129542686 \u001b[33m401\u001b[0m 74.858 ms - 1308\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:26:42.584Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.9394471663054&lon=77.72427129542686 \u001b[32m200\u001b[0m 1111.095 ms - 691\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:27:26.675Z"}
+{"level":"info","message":"Server is running on port 3000 in development mode","service":"weather-service","timestamp":"2026-02-28T15:27:53.556Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather \u001b[32m200\u001b[0m 704.093 ms - 682\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:27:57.131Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=37.77&lon=-122.41 \u001b[32m200\u001b[0m 172.115 ms - 697\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:27:57.311Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=37.77&lon=-122.41&locationName=Mysuru%2C%20India \u001b[32m200\u001b[0m 172.524 ms - 685\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:27:57.487Z"}
+{"level":"info","message":"\u001b[0mGET /api/v1/weather?lat=12.9394277767424&lon=77.72423643401783 \u001b[32m200\u001b[0m 1134.912 ms - 691\u001b[0m","service":"weather-service","timestamp":"2026-02-28T15:28:14.808Z"}
