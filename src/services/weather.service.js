@@ -1,5 +1,6 @@
 const axios = require('axios');
 const ApiError = require('../utils/ApiError');
+const config = require('../config');
 const logger = require('../config/logger');
 
 class WeatherService {
@@ -8,16 +9,18 @@ class WeatherService {
      */
     async getReverseGeocode(lat, lon) {
         try {
-            const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`;
+            const baseUrl = config.weather.NOMINATIM.BASE_URL;
+            const endpoint = config.weather.NOMINATIM.ENDPOINTS.REVERSE;
+            const url = `${baseUrl}${endpoint}?format=json&lat=${lat}&lon=${lon}`;
             logger.info(`🔄 Reverse geocoding request: ${url}`);
             
             const response = await axios.get(
                 url,
                 {
                     headers: {
-                        'User-Agent': 'FarmerAssist/1.0'
+                        'User-Agent': config.weather.NOMINATIM.USER_AGENT
                     },
-                    timeout: 5000 // 5 second timeout
+                    timeout: config.weather.NOMINATIM.TIMEOUT
                 }
             );
 
@@ -53,13 +56,17 @@ class WeatherService {
         const numLat = lat ? parseFloat(lat) : undefined;
         const numLon = lon ? parseFloat(lon) : undefined;
 
-        // Default to Bengaluru coordinates if not provided or invalid
-        const latitude = (numLat !== undefined && !isNaN(numLat)) ? numLat : 12.9716;
-        const longitude = (numLon !== undefined && !isNaN(numLon)) ? numLon : 77.5946;
+        // Default to configured default location if not provided or invalid
+        const defaultLat = config.weather.DEFAULT_LOCATION.LATITUDE;
+        const defaultLon = config.weather.DEFAULT_LOCATION.LONGITUDE;
+        const latitude = (numLat !== undefined && !isNaN(numLat)) ? numLat : defaultLat;
+        const longitude = (numLon !== undefined && !isNaN(numLon)) ? numLon : defaultLon;
 
         try {
-            // Free Open-Meteo API, no API key required
-            const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,precipitation,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,weather_code&timezone=auto&wind_speed_unit=ms`;
+            // Open-Meteo API - using config for base URL
+            const baseUrl = config.weather.OPEN_METEO.BASE_URL;
+            const forecastEndpoint = config.weather.OPEN_METEO.ENDPOINTS.FORECAST;
+            const url = `${baseUrl}${forecastEndpoint}?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,precipitation,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,weather_code&timezone=auto&wind_speed_unit=ms`;
 
             const response = await axios.get(url);
             const current = response.data.current;
@@ -84,8 +91,10 @@ class WeatherService {
                     logger.info(`✓ Location detected via reverse geocoding: ${finalLocationName}`);
                 } else {
                     // Fallback: Use default location names for known coordinates
-                    const isDefault = Math.abs(latitude - 12.9716) < 0.01 && Math.abs(longitude - 77.5946) < 0.01;
-                    finalLocationName = isDefault ? 'Bengaluru, India' : `Location (${latitude.toFixed(2)}, ${longitude.toFixed(2)})`;
+                    const defaultLat = config.weather.DEFAULT_LOCATION.LATITUDE;
+                    const defaultLon = config.weather.DEFAULT_LOCATION.LONGITUDE;
+                    const isDefault = Math.abs(latitude - defaultLat) < 0.01 && Math.abs(longitude - defaultLon) < 0.01;
+                    finalLocationName = isDefault ? config.weather.DEFAULT_LOCATION.NAME : `Location (${latitude.toFixed(2)}, ${longitude.toFixed(2)})`;
                 }
             }
 
@@ -105,7 +114,5 @@ class WeatherService {
         }
     }
 }
-
-module.exports = new WeatherService();
 
 module.exports = new WeatherService();

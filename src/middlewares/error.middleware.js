@@ -1,4 +1,5 @@
 const logger = require('../config/logger');
+const config = require('../config');
 
 const errorHandler = (err, req, res, next) => {
     let { statusCode, message } = err;
@@ -16,7 +17,7 @@ const errorHandler = (err, req, res, next) => {
     const response = {
         code: statusCode,
         message,
-        ...(process.env.NODE_ENV === 'development' && { stack: err.stack }),
+        ...(config.isDevelopment() && { stack: err.stack }),
     };
 
     res.status(statusCode || 500).send(response);
