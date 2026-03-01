@@ -69,3 +69,5 @@ private_keys/
 # Backups
 *.bak
 *.backup
+
+combined.log

@@ -32,6 +32,10 @@ module.exports = {
     TIMEOUT: 30000 // 30 seconds
   },
 
+  // Base URL (useful for production builds behind ALB)
+  // Set `BACKEND_URL` during deployment to the ALB DNS (e.g. http://my-alb-123.ap-south-1.elb.amazonaws.com)
+  BASE_URL: process.env.BACKEND_URL || `http://localhost:${env.port}`,
+
   // Security
   SECURITY: {
     HELMET_ENABLED: !env.isDev,
