@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const logger = require('./config/logger');
 const errorHandler = require('./middlewares/error.middleware');
 const weatherRoutes = require('./routes/weather.routes');
+const cropPredictionRoutes = require('./routes/crop-prediction.routes');
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(morgan(morganFormat, { stream: { write: message => logger.info(message.t
 
 // Mount API Routes
 app.use('/api/v1/weather', weatherRoutes);
+app.use('/api/v1/crop-prediction', cropPredictionRoutes);
 
 // Undefined Route Handler
 app.use((req, res, next) => {

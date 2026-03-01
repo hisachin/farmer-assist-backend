@@ -1,10 +1,10 @@
 const express = require('express');
 const weatherController = require('../controllers/weather.controller');
-const authMiddleware = require('../middlewares/auth.middleware');
 
 const router = express.Router();
 
-// Apply auth middleware to protect the route
-router.get('/', authMiddleware, weatherController.getWeather);
+// Weather endpoint is public - no auth required
+// (Weather data is fetched from free Open-Meteo API)
+router.get('/', weatherController.getWeather);
 
 module.exports = router;
