@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const config = require('./config');
 const logger = require('./config/logger');
 const errorHandler = require('./middlewares/error.middleware');
 const weatherRoutes = require('./routes/weather.routes');
@@ -17,13 +18,14 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Request Logging
-const morganFormat = process.env.NODE_ENV === 'production' ? 'combined' : 'dev';
+// Request Logging - use config for morgan format
+const morganFormat = config.isProduction() ? 'combined' : 'dev';
 app.use(morgan(morganFormat, { stream: { write: message => logger.info(message.trim()) } }));
 
-// Mount API Routes
-app.use('/api/v1/weather', weatherRoutes);
-app.use('/api/v1/crop-prediction', cropPredictionRoutes);
+// Mount API Routes - use config for API paths
+const apiPrefix = config.server.API.PREFIX;
+app.use(`${apiPrefix}${config.server.API.WEATHER}`, weatherRoutes);
+app.use(`${apiPrefix}${config.server.API.CROP_PREDICTION}`, cropPredictionRoutes);
 
 // Undefined Route Handler
 app.use((req, res, next) => {

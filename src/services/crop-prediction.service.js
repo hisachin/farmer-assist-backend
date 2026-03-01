@@ -1,20 +1,17 @@
 const { BedrockRuntimeClient, InvokeModelCommand } = require('@aws-sdk/client-bedrock-runtime');
 const ApiError = require('../utils/ApiError');
+const config = require('../config');
 const logger = require('../config/logger');
 
 class CropPredictionService {
     constructor() {
-        // Initialize Bedrock client with AWS credentials from environment variables
-        const region = process.env.AWS_REGION || 'us-east-1';
+        // Initialize Bedrock client with AWS credentials from config
         this.client = new BedrockRuntimeClient({ 
-            region,
-            credentials: {
-                accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-                secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
-            }
+            region: config.aws.REGION,
+            credentials: config.aws.CREDENTIALS
         });
         
-        this.modelId = 'moonshot.kimi-k2-thinking';
+        this.modelId = config.aws.MODEL.ID;
     }
 
     /**
@@ -34,8 +31,8 @@ class CropPredictionService {
             // Format weather data for the prompt
             const weatherContext = this.formatWeatherData(weatherData);
 
-            // Create a comprehensive prompt for Bedrock
-            const prompt = this.buildCropAnalysisPrompt(weatherContext, cropType, region);
+            // Create a comprehensive prompt for Bedrock using config
+            const prompt = config.prompts.CROP_ANALYSIS(weatherContext, cropType, region);
 
             logger.info(`Requesting crop prediction for ${cropType} in ${region} from Bedrock`);
 
@@ -84,61 +81,12 @@ class CropPredictionService {
     }
 
     /**
-     * Build a detailed prompt for crop analysis
-     */
-    buildCropAnalysisPrompt(weatherContext, cropType, region) {
-        return `You are an agricultural expert AI assistant specializing in crop prediction and analysis.
-
-Based on the following weather forecast and agricultural data, provide predictive analysis for ${cropType} cultivation in ${region}.
-
-${weatherContext}
-
-Please provide a detailed analysis in JSON format with the following structure:
-{
-    "cropHealth": {
-        "overall": "excellent/good/fair/poor",
-        "score": 0-100,
-        "reasoning": "brief explanation"
-    },
-    "riskFactors": [
-        {
-            "risk": "risk name",
-            "severity": "high/medium/low",
-            "description": "detailed description",
-            "mitigation": "suggested action"
-        }
-    ],
-    "recommendations": [
-        "specific recommendation 1",
-        "specific recommendation 2",
-        "specific recommendation 3"
-    ],
-    "harvestPrediction": {
-        "estimatedYield": "prediction with explanation",
-        "optimalHarvestTime": "timeline and conditions",
-        "qualityPrediction": "predicted quality indicators"
-    },
-    "marketInsights": {
-        "expectedDemand": "prediction based on season and crop",
-        "priceOutlook": "price trend prediction",
-        "marketTiming": "optimal selling period"
-    },
-    "waterRequirements": {
-        "irrigation": "recommended irrigation schedule",
-        "rainfall": "analysis of expected rainfall"
-    }
-}
-
-Provide accurate, actionable insights based on agricultural science and the given weather forecast.`;
-    }
-
-    /**
      * Invoke AWS Bedrock with the prompt
      */
     async invokeBedrock(prompt) {
         const payload = {
             anthropic_version: "bedrock-2023-06-01",
-            max_tokens: 2000,
+            max_tokens: config.aws.MODEL.MAX_TOKENS,
             messages: [
                 {
                     role: "user",
@@ -426,7 +374,8 @@ Provide accurate, actionable insights based on agricultural science and the give
 
             // If historical data is provided, get comparison analysis
             if (historicalData) {
-                const comparisonPrompt = this.buildComparisonPrompt(weatherData, cropType, region, historicalData);
+                const weatherContext = this.formatWeatherData(weatherData);
+                const comparisonPrompt = config.prompts.CROP_COMPARISON(weatherContext, cropType, region, historicalData);
                 const comparisonResponse = await this.invokeBedrock(comparisonPrompt);
                 standardAnalysis.historicalComparison = this.parsePredictiveAnalysis(comparisonResponse);
             }
@@ -438,30 +387,6 @@ Provide accurate, actionable insights based on agricultural science and the give
         }
     }
 
-    /**
-     * Build prompt for historical comparison
-     */
-    buildComparisonPrompt(weatherData, cropType, region, historicalData) {
-        return `As an agricultural expert, compare the current season's weather forecast for ${cropType} in ${region} with historical patterns.
-
-Current Weather Forecast:
-${this.formatWeatherData(weatherData)}
-
-Historical Data:
-${JSON.stringify(historicalData, null, 2)}
-
-Provide analysis in JSON format:
-{
-    "comparison": {
-        "isNormalSeason": boolean,
-        "deviations": ["deviation 1", "deviation 2"],
-        "confidenceLevel": "high/medium/low"
-    },
-    "seasonalTrends": "analysis of how this season compares",
-    "yieldAdjustment": "estimated yield change vs historical average",
-    "recommendations": ["adjusted recommendation 1", "adjusted recommendation 2"]
-}`;
-    }
 }
 
 module.exports = new CropPredictionService();
