@@ -21,6 +21,11 @@ app.use(express.urlencoded({ extended: true }));
 const morganFormat = process.env.NODE_ENV === 'production' ? 'combined' : 'dev';
 app.use(morgan(morganFormat, { stream: { write: message => logger.info(message.trim()) } }));
 
+// Health check endpoint (used by ALB target group)
+app.get('/health', (req, res) => {
+    res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
 // Mount API Routes
 app.use('/api/v1/weather', weatherRoutes);
 app.use('/api/v1/crop-prediction', cropPredictionRoutes);
