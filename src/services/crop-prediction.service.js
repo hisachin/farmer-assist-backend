@@ -5,11 +5,14 @@ const logger = require('../config/logger');
 
 class CropPredictionService {
     constructor() {
-        // Initialize Bedrock client with AWS credentials from config
-        this.client = new BedrockRuntimeClient({ 
-            region: config.aws.REGION,
-            credentials: config.aws.CREDENTIALS
-        });
+        // Initialize Bedrock client.
+        // When running on ECS with a task role, omit explicit credentials
+        // so the SDK uses the container credential provider.
+        const clientConfig = { region: config.aws.REGION };
+        if (config.aws.CREDENTIALS) {
+            clientConfig.credentials = config.aws.CREDENTIALS;
+        }
+        this.client = new BedrockRuntimeClient(clientConfig);
         
         this.modelId = config.aws.MODEL.ID;
     }

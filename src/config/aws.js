@@ -6,27 +6,29 @@
 
 const env = require('./environment');
 
-// Validate AWS credentials
-const validateAWSCreds = () => {
-  const required = ['AWS_ACCESS_KEY_ID', 'AWS_SECRET_ACCESS_KEY', 'AWS_REGION'];
-  const missing = required.filter(key => !process.env[key]);
-  
-  if (missing.length > 0 && env.isProd) {
-    throw new Error(`Missing required AWS credentials: ${missing.join(', ')}`);
+// Build AWS credentials.
+// On ECS/Fargate with a task role the SDK picks up credentials automatically
+// via the container credential provider — no env vars needed.
+// Only return explicit credentials when the env vars are present.
+const getCredentials = () => {
+  const accessKeyId = process.env.AWS_ACCESS_KEY_ID;
+  const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
+
+  if (accessKeyId && secretAccessKey) {
+    return { accessKeyId, secretAccessKey };
   }
-  
-  return {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
-  };
+
+  // On ECS the SDK resolves credentials from the task role automatically.
+  // Return undefined so the SDK uses the default credential chain.
+  return undefined;
 };
 
 module.exports = {
-  // Credentials
-  CREDENTIALS: validateAWSCreds(),
-  
-  // AWS Configuration
-  REGION: process.env.AWS_REGION || 'us-east-1',
+  // Credentials (undefined when running with an IAM task role)
+  CREDENTIALS: getCredentials(),
+
+  // AWS Configuration — default to ap-south-1 to match our deployment region
+  REGION: process.env.AWS_REGION || 'ap-south-1',
   
   // Bedrock Model Settings
   MODEL: {
